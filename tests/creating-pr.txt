@@ -1,0 +1,11 @@
+
+branching 
+git branch
+git checkout branch name
+git checkout -b branch-name
+
+In order to create PR
+I create a new branch
+checkout to that branch
+make changes
+push to that branch
