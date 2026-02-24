@@ -9,3 +9,6 @@ I create a new branch
 checkout to that branch
 make changes
 push to that branch
+
+on github, you have difference to compare
+click on compare and pull button
