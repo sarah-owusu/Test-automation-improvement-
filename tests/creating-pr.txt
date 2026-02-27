@@ -62,12 +62,14 @@ Stops tracking a file without deleting it locally (useful for removing files acc
 👉 What this shows: Ability to safely recover from mistakes and manage repository history.
 
 
+
 5. Checking Commit History
 
 git log --oneline
 Displays a compact history of commits, making it easy to track progress and identify changes quickly.
 
 👉 New learning highlight: Helps understand how features evolved over time.
+
 
 
 6. Branching (Feature Development Workflow)
