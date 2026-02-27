@@ -186,20 +186,29 @@ git stash: temporary set aside you unfinished work and saves it
 git stash pop: to retreive your most recently stashed work and simultaneosly removes it from the stash Lists
 with multiple stash Lists, use: 
 
-git stash list
-git stash apply
+
 git stash pop{0}: restores changes and removes them from the stash list
 git stash apply{0}: restores your changes but keep them in the stash list
+
 git stash drop
+Purpose: Deletes a specific stash entry from the stash list
+
+git stash list: Purpose: Shows all saved stashes in your repository.
+git stash apply: Applies a stash back to your working directory without removing it from the stash list.
 
 14. git revert
 ________________
 Git revert means fixing an old mistake without omitting it
 use commit id to revert mistakes
 
+git revert <commit-hash>
 git reset can take you back to a specific commit and discard all commit after that point without creating any new commit
 git revert removes the changes from a specifi commit by creating a new one that reverses it 
 
+DIFFERENCE BETWEEN GIT RESET AND GIT revert
+_____________________________________________
+git revert is safe for public/shared branches because it doesn’t rewrite history.
+git reset rewrites history and can cause problems if others are using the branch.
 
-
+git reset rewinds our branch to an earlier point, erasing commits locally, while git revert safely undoes a commit by creating a new one without touching history
 
