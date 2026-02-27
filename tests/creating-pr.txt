@@ -87,9 +87,15 @@ Creates and immediately switches to a new branch for isolated development.
 
 
 7. Merging Work
+Before merging, ensure the target branch is up-to-date with remote:
+git checkout develop
+git pull origin develop
 
 git merge develop
 Combines updates from the main development branch into the current branch to stay up to date.
+fetch updates our local repo with changes from the remote repo without merging them yet
+push send local changes to the remote repo
+pull meaning fetching and merging at the same time 
 
 👉 Explanation for leads:
 Prevents conflicts later by regularly syncing with team changes.
@@ -165,9 +171,7 @@ run: git diff RecentCommitHash NewercommitHash
 exit the terminal window to close the text editor by pressing q on the keyboard
 
 SENDING UPDATES TO THE REMOTE Repository
-fetch updates our local repo with changes from the remote repo without merging them yet
-push send local changes to the remote repo
-pull meaning fetching and merging at the same time 
+
 
 
 12. Restoring changes to the state of last commit
