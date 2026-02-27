@@ -1,14 +1,205 @@
+Week 1 Upskilling — Git & Playwright Workflow
 
-branching 
+1. Working with Directories (Navigation & Setup)
+_________________________________________________
+
+mkdir folder-name
+Used to create a new project or feature folder so work stays organized from the beginning.
+
+touch file-name
+Creates new files quickly from the terminal, helping initialize project structure without opening an editor.
+
+cd folder-name
+Moves into a specific directory to start working inside that project or module.
+
+cd ../
+Moves one level back in the directory structure, useful when navigating between project areas.
+
+pwd: to check the currently directly you are in
+
+👉 What this shows: Ability to manage project structure and work efficiently from the command line.
+
+
+2. Staging Files (Preparing Changes)
+
+git status
+Used to check the current working state — which files changed, staged, or not tracked — before committing.
+
+git add .
+Stages all modified files in the current folder for the next commit.
+
+git add --all / git add -A
+Stages every change across the repository, including deletions and moved files.
+
+👉 What this shows: Understanding of Git’s staging area and controlled change tracking.
+
+
+3. Saving History (Commits)
+
+git commit -m "message"
+Creates a saved checkpoint of work with a clear description, allowing history tracking and collaboration.
+
+👉 Best practice explained to leads:
+Commits should be small, meaningful, and describe why a change was made.
+
+
+4. Removing & Resetting Changes (History Control)
+
+git rm file-name
+Removes a file from both the project and Git tracking when it’s no longer needed.
+
+rm -rf newFolder/nextFolder/: to remove a folder
+
+git reset
+Unstages files while keeping the work locally, allowing corrections before committing.
+
+git reset --hard
+Returns the project to a previous clean state, discarding unwanted local changes.
+
+git rm --cached file-name (you mentioned “git cache” — this is the correct command)
+Stops tracking a file without deleting it locally (useful for removing files accidentally committed).
+
+👉 What this shows: Ability to safely recover from mistakes and manage repository history.
+
+
+
+5. Checking Commit History
+
+git log --oneline
+Displays a compact history of commits, making it easy to track progress and identify changes quickly.
+
+👉 New learning highlight: Helps understand how features evolved over time.
+
+
+
+6. Branching (Feature Development Workflow)
+
 git branch
-git checkout branch name
+Lists available branches and shows where current work is happening.
+
+git checkout branch-name
+Switches to another branch to work on a different feature or fix.
+
 git checkout -b branch-name
+Creates and immediately switches to a new branch for isolated development.
 
-In order to create PR
-I create a new branch
-checkout to that branch
-make changes
-push to that branch
+👉 What this shows: Understanding of feature-based development and safe collaboration.
 
-on github, you have difference to compare
-click on compare and pull button
+
+7. Merging Work
+Before merging, ensure the target branch is up-to-date with remote:
+git checkout develop
+git pull origin develop
+
+git merge develop
+Combines updates from the main development branch into the current branch to stay up to date.
+fetch updates our local repo with changes from the remote repo without merging them yet
+push send local changes to the remote repo
+pull meaning fetching and merging at the same time 
+
+👉 Explanation for leads:
+Prevents conflicts later by regularly syncing with team changes.
+
+
+8. Playwright Project with Git
+Git Configuration
+
+git config --global user.name
+Sets identity so commits are correctly attributed.
+
+git config --global user.email
+Links commits to GitHub account history.
+
+Staging & Saving Progress
+
+git add → prepares Playwright test changes
+git commit -m → records automation progress logically
+
+Pushing to Remote Repository
+
+git push -u origin master
+Uploads the project to GitHub and links the local branch to the remote branch for future pushes.
+
+👉 Demonstrates: Ability to publish work and collaborate remotely.
+
+
+9. Creating Branches & Pull Requests (Team Workflow)
+
+Workflow followed:
+
+Create a new branch.
+
+Switch to that branch.
+
+Implement changes.
+
+Push branch to GitHub.
+
+Open Compare & Pull Request.
+
+Request review and respond to feedback.
+
+👉 What this demonstrates:
+
+Collaborative development
+
+Code review participation
+
+Controlled integration of features
+
+
+10. Clean & Organized Repository Structure (What I Practiced)
+
+Feature-based branching
+
+Meaningful commit messages
+
+Structured Playwright project setup
+
+Regular syncing with main branch
+
+Avoiding direct work on main/master
+
+11. comparing different in previous commit and current commit
+________________________________________________________________
+first chack commit history
+git log --oneline
+
+then using the commit ids after runing git log
+run: git diff RecentCommitHash NewercommitHash
+
+exit the terminal window to close the text editor by pressing q on the keyboard
+
+SENDING UPDATES TO THE REMOTE Repository
+
+
+
+12. Restoring changes to the state of last commit
+________________________________________________________________
+git restore filename: to restore changes in a single file to the last commit
+git restore .: to restore to last commit changes in the entire repository
+git restore staged .: to restore all staged chages back to the last commit 
+
+13. Temporal saving of changes
+________________________________
+git stash: temporary set aside you unfinished work and saves it
+git stash pop: to retreive your most recently stashed work and simultaneosly removes it from the stash Lists
+with multiple stash Lists, use: 
+
+git stash list
+git stash apply
+git stash pop{0}: restores changes and removes them from the stash list
+git stash apply{0}: restores your changes but keep them in the stash list
+git stash drop
+
+14. git revert
+________________
+Git revert means fixing an old mistake without omitting it
+use commit id to revert mistakes
+
+git reset can take you back to a specific commit and discard all commit after that point without creating any new commit
+git revert removes the changes from a specifi commit by creating a new one that reverses it 
+
+
+
+
