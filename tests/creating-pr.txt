@@ -48,6 +48,8 @@ Commits should be small, meaningful, and describe why a change was made.
 git rm file-name
 Removes a file from both the project and Git tracking when it’s no longer needed.
 
+rm -rf newFolder/nextFolder/: to remove a folder
+
 git reset
 Unstages files while keeping the work locally, allowing corrections before committing.
 
