@@ -1,1 +1,1 @@
-This is the second conflict resolution change
+This test belongs to conflcit resolution
